@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/NIKHIL/MLOPS/mlops_atlas/mlruns/0/508d20508d4d45eca48e92c4e62c3060/artifacts
+end_time: 1793292876687
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 508d20508d4d45eca48e92c4e62c3060
+run_name: fearless-bird-768
+run_uuid: 508d20508d4d45eca48e92c4e62c3060
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1793292876509
+status: 4
+tags: []
+user_id: NIKHIL
