@@ -25,6 +25,7 @@ var/
 pip_repair/
 pip_repair_direct/
 reference/
+mlruns/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
