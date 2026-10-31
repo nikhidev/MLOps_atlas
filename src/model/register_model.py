@@ -65,23 +65,37 @@ def register_model(model_name: str, model_info: dict):
             version=model_version.version,
             stage="Staging",
             archive_existing_versions=True
-)
+        )
+
+        print("Registered Model:", model_name)
+        print("Model Version:", model_version.version)
+        print("Source Run ID:", model_version.run_id)
+        print("Model Source:", model_version.source)
         
         logging.debug(f'Model {model_name} version {model_version.version} registered and transitioned to Staging.')
     except Exception as e:
         logging.error('Error during model registration: %s', e)
         raise
-
+    
 def main():
     try:
         model_info_path = 'reports/experiment_info.json'
         model_info = load_model_info(model_info_path)
-        
+
         model_name = "my_model"
+
+        print("Run ID from experiment_info.json:", model_info["run_id"])
+        print("Model artifact path:", model_info["model_path"])
+
         register_model(model_name, model_info)
+
     except Exception as e:
-        logging.error('Failed to complete the model registration process: %s', e)
+        logging.error(
+            'Failed to complete the model registration process: %s', e
+        )
         print(f"Error: {e}")
+        raise
+
 
 if __name__ == '__main__':
     main()
