@@ -407,7 +407,7 @@ python-dotenv==1.2.4
     # via
     #   mlflow-skinny
     #   pydantic-settings
-pywin32==312
+pywin32==312; sys_platform == "win32"
     # via
     #   docker
     #   dvc-task
