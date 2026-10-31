@@ -2,7 +2,7 @@ pandas
 numpy
 scikit-learn
 flask
-mlflow
+mlflow==2.19.0
 dvc[s3]
 boto3
 nltk
