@@ -27,6 +27,8 @@ pip_repair_direct/
 reference/
 mlruns/
 venv/
+models/*.pkl
+
 .venv/
 
 # PyInstaller
