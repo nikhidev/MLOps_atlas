@@ -89,12 +89,16 @@ jobs:
 
       - name: Build Docker image
         run: |
-            docker build -t ${{ secrets.ECR_REPOSITORY }}:latest .
+          docker build -t flask-app:latest .
 
       - name: Tag Docker image
         run: |
-            docker tag ${{ secrets.ECR_REPOSITORY }}:latest \
-            ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${{ secrets.ECR_REPOSITORY }}:latest
+          docker tag flask-app:latest \
+          521648246206.dkr.ecr.us-east-1.amazonaws.com/mlops-atlas:flask-app
+
+      - name: Push Docker image to ECR
+        run: |
+          docker push 521648246206.dkr.ecr.us-east-1.amazonaws.com/mlops-atlas:flask-app
 
     
       - name: Check Docker Authentication
