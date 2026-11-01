@@ -132,7 +132,16 @@ def main():
                     mlflow.log_param(param_name, param_value)
             
             # Log model to MLflow
+# Log model to MLflow
             mlflow.sklearn.log_model(clf, "model")
+
+            print("Current working directory:", os.getcwd())
+            print("Vectorizer exists:", os.path.exists("models/vectorizer.pkl"))
+
+            mlflow.log_artifact(
+                "models/vectorizer.pkl",
+                artifact_path="preprocessing"
+            )
             
             # Save model info
             save_model_info(run.info.run_id, "model", 'reports/experiment_info.json')
